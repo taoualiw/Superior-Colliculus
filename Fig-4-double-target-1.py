@@ -41,7 +41,7 @@ from stimulus import *
 from parameters import *
 from projections import *
 import matplotlib
-font = {'size'   : 16}
+font = {'size'   : 14}
 matplotlib.rc('font', **font)
 
 # Decode function
@@ -125,7 +125,8 @@ model.R += np.random.uniform(0,0.05,model.R.shape)
 model.R *= model.R_mask
 
 model.run(duration=10*second, dt=5*millisecond, epsilon=0.0)
-polar_frame(ax1, legend=False, labels=False,reduced=True)
+polar_frame(ax1, legend=False, labels=True,reduced=True)
+plt.tight_layout()
 polar_imshow(ax1, model.R,reduced=True)
 '''
 if zoom:
@@ -139,9 +140,9 @@ if zoom:
     mark_inset(ax1, zax, loc1=2, loc2=4, fc="none", ec="0.5")
     polar_imshow(zax, model.R)
 '''
-logpolar_frame(ax2, legend=False, labels=False)
+logpolar_frame(ax2, legend=False,  labels=True)
 logpolar_imshow(ax2, model.SC_V)
-ax1.text(-0.05, 1.0, 'a', va='top', ha='right',
+ax1.text(2., 1.1, 'a', va='top', ha='right',
          transform=ax1.transAxes, fontsize=20, fontweight='bold')
 
 
@@ -153,7 +154,7 @@ model.R = np.maximum( stimulus((5, -25), size=1, intensity=1) ,
 model.R += np.random.uniform(0,0.05,model.R.shape)
 model.R *= model.R_mask
 model.run(duration=10*second, dt=5*millisecond, epsilon=0.0)
-polar_frame(ax1, legend=False, labels=False,reduced=True)
+polar_frame(ax1, legend=False,  labels=True, reduced=True)
 polar_imshow(ax1, model.R,reduced=True)
 '''
 if zoom:
@@ -167,9 +168,9 @@ if zoom:
     mark_inset(ax1, zax, loc1=2, loc2=4, fc="none", ec="0.5")
     polar_imshow(zax, model.R)
 '''
-logpolar_frame(ax2, legend=False, labels=False)
+logpolar_frame(ax2, legend=False, labels=True)
 logpolar_imshow(ax2, model.SC_V)
-ax1.text(-0.05, 1.0, 'b', va='top', ha='right',
+ax1.text(2, 1.1, 'b', va='top', ha='right',
          transform=ax1.transAxes, fontsize=20, fontweight='bold')
 
 ax = plt.subplot(G[2:, :])
