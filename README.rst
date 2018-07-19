@@ -1,6 +1,7 @@
-A parsimonious computational model of visual target position encoding in the
-superior colliculus, Wahiba Taouali, Laurent Goffart, Frédéric Alexandre,
-Nicolas P. Rougier, 2015, submitted.
+# A parsimonious computational model of visual target position encoding in the superior colliculus
+
+### Wahiba Taouali, Laurent Goffart, Frédéric Alexandre, Nicolas P. Rougier
+### Published in Journal of Biologycal Cybernetics, 5 September 2015.
 
 **Abstract**: The superior colliculus (SC) is a brainstem structure at the
 crossroad of multiple functional pathways. Several neurophysiological studies
