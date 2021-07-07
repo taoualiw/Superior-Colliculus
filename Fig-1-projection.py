@@ -52,9 +52,9 @@ if __name__ == '__main__':
 
     # Checkerboard pattern for retina
     grid = 2*32
-    even = grid / 2 * [0, 1]
-    odd = grid / 2 * [1, 0]
-    R = np.row_stack(grid / 2 * (even, odd))
+    even = int(grid / 2) * [0, 1]
+    odd = int(grid / 2) * [1, 0]
+    R = np.row_stack(int(grid / 2) * (even, odd))
     R = R.repeat(grid, axis=0).repeat(grid, axis=1)
 
     # Mask with a disc
@@ -71,7 +71,7 @@ if __name__ == '__main__':
 
     fig = plt.figure(figsize=(10,15), facecolor='w')
     ######################
-    
+
     ax1, ax2 = ImageGrid(fig, 211, nrows_ncols=(1,2), axes_pad=0.5)
     polar_frame(ax1, legend=True)
     polar_imshow(ax1, R, vmin=0, vmax=5)
@@ -82,7 +82,7 @@ if __name__ == '__main__':
         #ax1.text(0., -1.28, u"0°                                                     90°",
         #      ha="left", va="bottom", fontsize=10)
     ################################
-    
+
     ax1, ax2 = ImageGrid(fig, 212, nrows_ncols=(1,2), axes_pad=0.5)
     polar_frame(ax1, legend=True,reduced=True)
     '''
@@ -100,7 +100,7 @@ if __name__ == '__main__':
     R = np.maximum(R , stimulus(position=(10,0)))
     polar_imshow(ax1, R,reduced=True)
     #polar_imshow(zax, R)
-    
+
     logpolar_frame(ax2, legend=True)
     P = retina_projection()
     SC = R[P[...,0], P[...,1]]

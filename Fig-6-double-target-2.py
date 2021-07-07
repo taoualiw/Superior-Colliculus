@@ -68,10 +68,10 @@ else:
         model.R = np.maximum( stimulus((0.75*rho, -theta), size=1, intensity=1) ,
                              stimulus((rho, +theta), size=1., intensity=1.) )
         model.R += np.random.uniform(0,0.05,model.R.shape)
-                             
+
         model.run(duration=5*second, dt=5*millisecond, epsilon=0.0)
         x,y = decode(model.SC_V)
-        print u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y)
+        print(u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y))
         T5[i] = x,y
     np.save("data/double-target-5-1.npy",T5)
 
@@ -86,10 +86,10 @@ else:
         model.R = np.maximum( stimulus((0.75*rho, -theta), size=1, intensity=1) ,
                              stimulus((rho, +theta), size=1., intensity=1.) )
         model.R += np.random.uniform(0,0.05,model.R.shape)
-                             
+
         model.run(duration=5*second, dt=5*millisecond, epsilon=0.0)
         x,y = decode(model.SC_V)
-        print u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y)
+        print(u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y))
         T10[i] = x,y
     np.save("data/double-target-10-1.npy",T10)
 
@@ -104,10 +104,10 @@ else:
         model.R = np.maximum( stimulus((0.75*rho, -theta), size=1, intensity=1) ,
                              stimulus((rho, +theta), size=1., intensity=1.) )
         model.R += np.random.uniform(0,0.05,model.R.shape)
-                             
+
         model.run(duration=5*second, dt=5*millisecond, epsilon=0.0)
         x,y = decode(model.SC_V)
-        print u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y)
+        print(u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y))
         T15[i] = x,y
     np.save("data/double-target-15-1.npy",T15)
 

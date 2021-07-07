@@ -71,7 +71,7 @@ else:
 
         model.run(duration=5*second, dt=5*millisecond, epsilon=0.0)
         x,y = decode(model.SC_V)
-        print u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y)
+        print(u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y))
         T5[i] = x,y
     np.save("data/double-target-intensity-2-5.npy",T5)
 
@@ -89,7 +89,7 @@ else:
 
         model.run(duration=5*second, dt=5*millisecond, epsilon=0.0)
         x,y = decode(model.SC_V)
-        print u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y)
+        print(u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y))
         T10[i] = x,y
     np.save("data/double-target-intensity-2-10.npy",T10)
 
@@ -107,7 +107,7 @@ else:
 
         model.run(duration=5*second, dt=5*millisecond, epsilon=0.0)
         x,y = decode(model.SC_V)
-        print u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y)
+        print(u"Δθ = %.2f: (%f,%f)" % (2*theta, x, y))
         T15[i] = x,y
     np.save("data/double-target-intensity-2-15.npy",T15)
 

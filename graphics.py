@@ -30,6 +30,7 @@
 # -----------------------------------------------------------------------------
 import numpy as np
 import matplotlib.pyplot as plt
+
 from mpl_toolkits.axes_grid1 import ImageGrid
 from mpl_toolkits.axes_grid1.inset_locator import mark_inset
 from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes
@@ -43,22 +44,22 @@ def polar_frame(ax, title=None, legend=False, zoom=False, labels=True,reduced=Fa
     for rho in [0,2,5,10,20,40,60,80,90]:
         lw, color, alpha = 1, '0.00', 0.25
         if reduced:
-	  if rho>20:
-	    continue
+            if rho>20:
+                continue
         if rho == 90 and not zoom:
             color, lw, alpha = '0.00', 2, 1
 
         n = 500
         R = np.ones(n)*rho/90.0
         if reduced:
-	  R =4.5* np.ones(n)*rho/90.0
+            R =4.5* np.ones(n)*rho/90.0
         T = np.linspace(-np.pi/2,np.pi/2,n)
         X,Y = polar_to_cartesian(R,T)
-        ax.plot(X, Y-1/2, color=color, lw=lw, alpha=alpha)
-	
-	if reduced: rhos = [0,2,5,10,20]
-	else:
-	  rhos = [0,10,20,40,80]
+        ax.plot(X, Y, color=color, lw=lw, alpha=alpha)
+
+    if reduced: rhos = [0,2,5,10,20]
+    else:
+        rhos = [0,10,20,40,80]
         if not zoom and rho in rhos and labels:
             ax.text(X[-1]*1.0-0.075, Y[-1],u'%d°' % rho, color='k', # size=15,
                     horizontalalignment='center', verticalalignment='center')
@@ -72,7 +73,7 @@ def polar_frame(ax, title=None, legend=False, zoom=False, labels=True,reduced=Fa
         n = 500
         R = np.linspace(0,1,n)
         if reduced:
-	  R=4.5*np.linspace(0,2./9.,n)
+            R=4.5*np.linspace(0,2./9.,n)
         T = np.ones(n)*angle
         X,Y = polar_to_cartesian(R,T)
         ax.plot(X, Y, color=color, lw=lw, alpha=alpha)
@@ -178,7 +179,7 @@ def polar_imshow(axis, Z, reduced=False, *args, **kwargs):
       axis.imshow(Z, extent=[0,9./2.,-9./2., 9./2.], *args, **kwargs)
     else:
       axis.imshow(Z, extent=[0,1,-1, 1], *args, **kwargs)
-    
+
 
 
 
